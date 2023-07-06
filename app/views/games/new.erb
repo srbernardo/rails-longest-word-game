@@ -1,0 +1,10 @@
+<h1>New Game</h1>
+<h2><%= @letras %></h2>
+
+<form action="/score" method="post" data-turbo="false">
+  <label for="">What is the longest word you can find?</label>
+  <input type="text" name="word">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :letras, @letras %>
+  <input type="submit" value="Play">
+</form>
